@@ -49,7 +49,7 @@ export function Layout() {
         sidebarOpen ? 'translate-x-0' : '-translate-x-full'
       } w-64 bg-white border-r border-gray-200`}>
         <div className="flex items-center justify-between p-4 border-b">
-          <span className="text-xl font-semibold">VTU Dashboard</span>
+          <span className="text-xl font-semibold">Mufal Data Sub</span>
           <button onClick={() => setSidebarOpen(!sidebarOpen)}>
             <Menu className="w-6 h-6" />
           </button>
@@ -73,7 +73,7 @@ export function Layout() {
         {/* Top Navbar */}
         <header className="bg-white border-b border-gray-200 h-16">
           <div className="flex items-center justify-between px-4 h-full">
-            <button onClick={() => setSidebarOpen(!sidebarOpen)} className="lg:hidden">
+            <button onClick={() => setSidebarOpen(!sidebarOpen)} className={`${sidebarOpen ? 'lg:hidden' : ''}`}>
               <Menu className="w-6 h-6" />
             </button>
             <div className="flex items-center space-x-4">
@@ -86,7 +86,10 @@ export function Layout() {
                   className="flex items-center space-x-2 p-2 hover:bg-gray-100 rounded-lg"
                 >
                   <User className="w-6 h-6" />
-                  <span>{user?.name}</span>
+                  <div className="flex flex-col">
+                    <span className="font-bold">{user?.username}</span>
+                    <span className="text-sm text-gray-600">{user?.email}</span>
+                  </div>
                   <ChevronDown className="w-4 h-4" />
                 </button>
                 {dropdownOpen && (
