@@ -5,7 +5,9 @@ import { Landing } from './pages/Landing';
 import { Login } from './pages/Login';
 import { Register } from './pages/Register';
 import { Home } from './pages/Home';
+import { Wallet } from './pages/Walet';
 import { useAuthStore } from './lib/store';
+import { WalletFund } from './pages/WalletFund';
 
 function ProtectedRoute({ children }: { children: React.ReactNode }) {
   const isAuthenticated = useAuthStore((state) => state.isAuthenticated);
@@ -49,8 +51,8 @@ function App() {
           <Route path="buy-cable" element={<div>Buy Cable Page</div>} />
           <Route path="electricity" element={<div>Electricity Bill Page</div>} />
           <Route path="transactions" element={<div>Transactions Page</div>} />
-          <Route path="wallet" element={<div>Wallet Page</div>} />
-          <Route path="fund-wallet" element={<div>Fund Wallet Page</div>} />
+          <Route path="wallet" element={<Wallet />} />
+          <Route path="fund-wallet" element={<WalletFund />} />
         </Route>
 
         {/* Redirect root to landing for non-authenticated users */}

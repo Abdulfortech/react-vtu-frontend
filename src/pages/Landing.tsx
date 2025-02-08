@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Menu, X, Zap, Phone, Tv, CreditCard, Wallet, DollarSign } from 'lucide-react';
+import { Menu, X, Zap, Phone, Tv, Wallet, DollarSign } from 'lucide-react';
 
 export function Landing() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);

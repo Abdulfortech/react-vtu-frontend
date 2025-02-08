@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Outlet, Link, useNavigate } from 'react-router-dom';
 import {
   Menu,
@@ -72,11 +72,11 @@ export function Layout() {
       <div className={`${sidebarOpen ? 'ml-64' : 'ml-0'} flex flex-col min-h-screen`}>
         {/* Top Navbar */}
         <header className="bg-white border-b border-gray-200 h-16">
-          <div className="flex items-center justify-between px-4 h-full">
+          <div className="flex justify-between items-center px-4 w-full h-full">
             <button onClick={() => setSidebarOpen(!sidebarOpen)} className={`${sidebarOpen ? 'lg:hidden' : ''}`}>
               <Menu className="w-6 h-6" />
             </button>
-            <div className="flex items-center space-x-4">
+            <div className="flex items-center justify-end w-full space-x-4">
               <button className="p-2 hover:bg-gray-100 rounded-full">
                 <Bell className="w-6 h-6" />
               </button>
@@ -86,9 +86,9 @@ export function Layout() {
                   className="flex items-center space-x-2 p-2 hover:bg-gray-100 rounded-lg"
                 >
                   <User className="w-6 h-6" />
-                  <div className="flex flex-col">
+                  <div className="flex flex-col text-left content-start">
                     <span className="font-bold">{user?.username}</span>
-                    <span className="text-sm text-gray-600">{user?.email}</span>
+                    <span className="text-sm text-gray-600">₦{user?.balance || "0.00"}</span>
                   </div>
                   <ChevronDown className="w-4 h-4" />
                 </button>
